@@ -81,7 +81,16 @@ public class LocationPlugin extends CordovaPlugin {
 			Double longitudeFrom = args.getDouble(1);
 			Double latitudeTo = args.getDouble(2);
 			Double longitudeTo = args.getDouble(3);
-			double distance = DistanceUtil.getDistance(new LatLng(latitudeFrom, longitudeFrom), new LatLng(latitudeTo, longitudeTo));
+			double distance = 0;
+			try {
+				// TODO: DistanceUtil报错
+				distance = DistanceUtil.getDistance(new LatLng(latitudeFrom, longitudeFrom), new LatLng(latitudeTo, longitudeTo));
+				callbackContext.success(Double.toString(distance));
+			} catch (Exception e) {
+				e.printStackTrace();
+				callbackContext.error(e.getMessage());
+				return true;
+			}
 			callbackContext.success(Double.toString(distance));
 			return true;
 		}
