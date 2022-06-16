@@ -2,13 +2,13 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
   xmlns:rim="http://www.blackberry.com/ns/widgets"
   xmlns:android="http://schemas.android.com/apk/res/android"
-  id="cordova-plugin-baidu-geolocation"
+  id="cordova-plugin-baidu-location"
   version="1.0.0">
-  <name>cordova-plugin-baidu-geolocation</name>
-  <description>cordova-plugin-baidu-geolocation</description>
+  <name>cordova-plugin-baidu-location</name>
+  <description>cordova-plugin-baidu-location</description>
   <keywords>cordova,location</keywords>
-  <repo>https://github.com/zhoucan38/cordova-plugin-baidu-geolocation.git</repo>
-  <issue>https://github.com/zhoucan38/cordova-plugin-baidu-geolocation/issues</issue>
+  <repo>https://github.com/zhoucan38/cordova-plugin-baidu-location.git</repo>
+  <issue>https://github.com/zhoucan38/cordova-plugin-baidu-location/issues</issue>
 
   <preference name="API_KEY"/>
 

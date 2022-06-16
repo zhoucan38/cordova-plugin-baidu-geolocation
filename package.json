@@ -1,10 +1,10 @@
 {
-  "name": "cordova-plugin-baidu-geolocation",
+  "name": "cordova-plugin-baidu-location",
   "version": "1.0.0",
   "description": "百度地图sdk获取经纬度",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhoucan38/cordova-plugin-baidu-geolocation.git"
+    "url": "git+https://github.com/zhoucan38/cordova-plugin-baidu-location.git"
   },
   "keywords": [
     "baiduSDK",
@@ -13,7 +13,7 @@
   "author": "FunkyZc (https://github.com/zhoucan38)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zhoucan38/cordova-plugin-baidu-geolocation/issues"
+    "url": "https://github.com/zhoucan38/cordova-plugin-baidu-location/issues"
   },
-  "homepage": "https://github.com/zhoucan38/cordova-plugin-baidu-geolocation#readme"
+  "homepage": "https://github.com/zhoucan38/cordova-plugin-baidu-location#readme"
 }

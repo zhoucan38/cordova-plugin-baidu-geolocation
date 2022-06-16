@@ -2,8 +2,11 @@
 var exec = require('cordova/exec');
 
 const baiduLocation = {
-  getlocation: function (success, error) {
-      exec(success, error, 'LocationPlugin', 'getlocation', []);
+  getLocation: function (success, error) {
+      exec(success, error, 'LocationPlugin', 'getLocation', []);
+  },
+  getDistance: function (inLat, inLng, outLat, outLng, success, error) {
+    exec(success, error, 'LocationPlugin', 'getDistance', [inLat, inLng, outLat, outLng]);
   }
 }
 

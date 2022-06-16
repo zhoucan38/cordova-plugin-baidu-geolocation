@@ -1,6 +1,10 @@
 package com.baidu.location;
 
-import java.util.Locale;
+import android.util.Log;
+
+import com.baidu.location.LocationClientOption.LocationMode;
+import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.utils.DistanceUtil;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -11,17 +15,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
-
-import com.baidu.location.BDLocation;
-import com.baidu.location.BDLocationListener;
-import com.baidu.location.LocationClient;
-import com.baidu.location.LocationClientOption;
-import com.baidu.location.LocationClientOption.LocationMode;
-
 public class LocationPlugin extends CordovaPlugin {
-
-	private static final String ACTION_GETLOCATION = "getlocation";
 
 	private CallbackContext callbackContext = null;
 	private LocationClient locationClient = null;
@@ -29,6 +23,8 @@ public class LocationPlugin extends CordovaPlugin {
 
 	@Override
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+		// 隐私政策设置同意
+		LocationClient.setAgreePrivacy(true);
 		if (locationClient == null) {
 			LocationClientOption option = new LocationClientOption();
 			option.setCoorType( "bd09ll" ); // 可选，默认gcj02，设置返回的定位结果坐标系，如果配合百度地图使用，建议设置为bd09ll;
@@ -56,6 +52,8 @@ public class LocationPlugin extends CordovaPlugin {
 		super.initialize(cordova, webView);
 	}
 
+
+
 	@Override
 	public void onDestroy() {
 		if (locationClient != null) {
@@ -71,11 +69,20 @@ public class LocationPlugin extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, JSONArray args,	CallbackContext callbackContext) throws JSONException {
 		this.callbackContext = callbackContext;
-		if (ACTION_GETLOCATION.equals(action.toLowerCase(Locale.CHINA))) {
+		if ("getLocation".equals(action)) {
 			locationClient.start();
 			PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
 			r.setKeepCallback(true);
 			callbackContext.sendPluginResult(r);
+			return true;
+		}
+		if ("getDistance".equals(action)) {
+			Double latitudeFrom = args.getDouble(0);
+			Double longitudeFrom = args.getDouble(1);
+			Double latitudeTo = args.getDouble(2);
+			Double longitudeTo = args.getDouble(3);
+			double distance = DistanceUtil.getDistance(new LatLng(latitudeFrom, longitudeFrom), new LatLng(latitudeTo, longitudeTo));
+			callbackContext.success(Double.toString(distance));
 			return true;
 		}
 		return false;
@@ -83,20 +90,25 @@ public class LocationPlugin extends CordovaPlugin {
 
 	private class LocationListener extends BDAbstractLocationListener {
 		@Override
-		public void onReceiveLocation(BDLocation loc) {
+		public void onReceiveLocation(BDLocation location) {
 			if (locationClient.isStarted()) {
 				locationClient.stop();
 			}
 			JSONObject jo = new JSONObject();
 			try {
-				jo.put("longitude",  loc.getLongitude());
-				jo.put("latitude",  loc.getLatitude());
-				jo.put("address", loc.getAddrStr());
-				jo.put("hasRadius ", loc.hasRadius());
-				jo.put("radius", loc.getRadius());
-				int type = loc.getLocType();
-				String typeStr = (type == BDLocation.TypeGpsLocation ? "gps" : (type==BDLocation.TypeNetWorkLocation ? "网络" : "其它"));
-				jo.put("type",typeStr);
+				jo.put("longitude",  location.getLongitude());
+				jo.put("latitude",  location.getLatitude());
+				jo.put("addr", location.getAddrStr());
+				jo.put("country", location.getCountry());
+				jo.put("province", location.getProvince());
+				jo.put("city", location.getCity());
+				jo.put("district", location.getDistrict());
+				jo.put("adcode", location.getAdCode());
+				jo.put("town", location.getTown());
+				jo.put("hasRadius", location.hasRadius());
+				jo.put("radius", location.getRadius());
+				jo.put("errorCode", location.getLocType());
+				int locType = location.getLocType();
 			} catch (JSONException e) {
 				jo = null;
 				e.printStackTrace();
