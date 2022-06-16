@@ -1,5 +1,5 @@
 
-var cordova = require('cordova');
+var exec = require('cordova/exec');
 
 const baiduLocation = {
   getlocation: function (success, error) {
