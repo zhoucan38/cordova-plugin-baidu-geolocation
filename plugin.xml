@@ -44,35 +44,35 @@
 
     <source-file src="src/android/libs/BaiduLBS_Android.jar" target-dir="libs"/>
 
-    <source-file src="src/android/arm64-v8a/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/arm64-v8a"/>
-    <source-file src="src/android/arm64-v8a/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/arm64-v8a"/>
-    <source-file src="src/android/arm64-v8a/libgnustl_shared.so" target-dir="libs/arm64-v8a"/>
-    <source-file src="src/android/arm64-v8a/libindoor.so" target-dir="libs/arm64-v8a"/>
-    <source-file src="src/android/arm64-v8a/liblocSDK8b.so" target-dir="libs/arm64-v8a"/>
+    <source-file src="src/android/libs/arm64-v8a/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/arm64-v8a"/>
+    <source-file src="src/android/libs/arm64-v8a/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/arm64-v8a"/>
+    <source-file src="src/android/libs/arm64-v8a/libgnustl_shared.so" target-dir="libs/arm64-v8a"/>
+    <source-file src="src/android/libs/arm64-v8a/libindoor.so" target-dir="libs/arm64-v8a"/>
+    <source-file src="src/android/libs/arm64-v8a/liblocSDK8b.so" target-dir="libs/arm64-v8a"/>
 
-    <source-file src="src/android/armeabi/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/armeabi"/>
-    <source-file src="src/android/armeabi/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/armeabi"/>
-    <source-file src="src/android/armeabi/libgnustl_shared.so" target-dir="libs/armeabi"/>
-    <source-file src="src/android/armeabi/libindoor.so" target-dir="libs/armeabi"/>
-    <source-file src="src/android/armeabi/liblocSDK8b.so" target-dir="libs/armeabi"/>
+    <source-file src="src/android/libs/armeabi/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/armeabi"/>
+    <source-file src="src/android/libs/armeabi/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/armeabi"/>
+    <source-file src="src/android/libs/armeabi/libgnustl_shared.so" target-dir="libs/armeabi"/>
+    <source-file src="src/android/libs/armeabi/libindoor.so" target-dir="libs/armeabi"/>
+    <source-file src="src/android/libs/armeabi/liblocSDK8b.so" target-dir="libs/armeabi"/>
 
-    <source-file src="src/android/armeabi-v7a/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/armeabi-v7a"/>
-    <source-file src="src/android/armeabi-v7a/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/armeabi-v7a"/>
-    <source-file src="src/android/armeabi-v7a/libgnustl_shared.so" target-dir="libs/armeabi-v7a"/>
-    <source-file src="src/android/armeabi-v7a/libindoor.so" target-dir="libs/armeabi-v7a"/>
-    <source-file src="src/android/armeabi-v7a/liblocSDK8b.so" target-dir="libs/armeabi-v7a"/>
+    <source-file src="src/android/libs/armeabi-v7a/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/armeabi-v7a"/>
+    <source-file src="src/android/libs/armeabi-v7a/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/armeabi-v7a"/>
+    <source-file src="src/android/libs/armeabi-v7a/libgnustl_shared.so" target-dir="libs/armeabi-v7a"/>
+    <source-file src="src/android/libs/armeabi-v7a/libindoor.so" target-dir="libs/armeabi-v7a"/>
+    <source-file src="src/android/libs/armeabi-v7a/liblocSDK8b.so" target-dir="libs/armeabi-v7a"/>
 
-    <source-file src="src/android/x86/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/x86"/>
-    <source-file src="src/android/x86/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/x86"/>
-    <source-file src="src/android/x86/libgnustl_shared.so" target-dir="libs/x86"/>
-    <source-file src="src/android/x86/libindoor.so" target-dir="libs/x86"/>
-    <source-file src="src/android/x86/liblocSDK8b.so" target-dir="libs/x86"/>
+    <source-file src="src/android/libs/x86/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/x86"/>
+    <source-file src="src/android/libs/x86/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/x86"/>
+    <source-file src="src/android/libs/x86/libgnustl_shared.so" target-dir="libs/x86"/>
+    <source-file src="src/android/libs/x86/libindoor.so" target-dir="libs/x86"/>
+    <source-file src="src/android/libs/x86/liblocSDK8b.so" target-dir="libs/x86"/>
 
-    <source-file src="src/android/x86_64/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/x86_64"/>
-    <source-file src="src/android/x86_64/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/x86_64"/>
-    <source-file src="src/android/x86_64/libgnustl_shared.so" target-dir="libs/x86_64"/>
-    <source-file src="src/android/x86_64/libindoor.so" target-dir="libs/x86_64"/>
-    <source-file src="src/android/x86_64/liblocSDK8b.so" target-dir="libs/x86_64"/>
+    <source-file src="src/android/libs/x86_64/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/x86_64"/>
+    <source-file src="src/android/libs/x86_64/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/x86_64"/>
+    <source-file src="src/android/libs/x86_64/libgnustl_shared.so" target-dir="libs/x86_64"/>
+    <source-file src="src/android/libs/x86_64/libindoor.so" target-dir="libs/x86_64"/>
+    <source-file src="src/android/libs/x86_64/liblocSDK8b.so" target-dir="libs/x86_64"/>
 
     <source-file src="src/android/LocationPlugin.java" target-dir="src/com/baidu/location" />
   </platform>
