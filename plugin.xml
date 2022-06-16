@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:rim="http://www.blackberry.com/ns/widgets"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="cordova-plugin-baidu-geolocation"
+  version="1.0.0">
+  <name>cordova-plugin-baidu-geolocation</name>
+  <description>cordova-plugin-baidu-geolocation</description>
+  <keywords>cordova,location</keywords>
+  <repo>https://github.com/zhoucan38/cordova-plugin-baidu-geolocation.git</repo>
+  <issue>https://github.com/zhoucan38/cordova-plugin-baidu-geolocation/issues</issue>
+
+  <js-module src="www/location.js" name="LocationPlugin">
+      <clobbers target="LocationPlugin" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="LocationPlugin" >
+            <param name="android-package" value="com.baidu.location.LocationPlugin"/>
+        </feature>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <!-- 这个权限用于进行网络定位-->
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+      <!-- 这个权限用于访问GPS定位-->
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+      <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+      <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+      <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+      <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+      <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+      <!-- 访问网络，网络定位需要上网-->
+      <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"/>
+      <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="$API_KEY"/>
+    </config-file>
+    
+    <source-file src="src/android/BaiduLBS_Android.jar" target-dir="libs"/>
+
+    <source-file src="src/android/arm64-v8a/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/arm64-v8a"/>
+    <source-file src="src/android/arm64-v8a/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/arm64-v8a"/>
+    <source-file src="src/android/arm64-v8a/libgnustl_shared.so" target-dir="libs/arm64-v8a"/>
+    <source-file src="src/android/arm64-v8a/libindoor.so" target-dir="libs/arm64-v8a"/>
+    <source-file src="src/android/arm64-v8a/liblocSDK8b.so" target-dir="libs/arm64-v8a"/>
+
+    <source-file src="src/android/armeabi/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/armeabi"/>
+    <source-file src="src/android/armeabi/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/armeabi"/>
+    <source-file src="src/android/armeabi/libgnustl_shared.so" target-dir="libs/armeabi"/>
+    <source-file src="src/android/armeabi/libindoor.so" target-dir="libs/armeabi"/>
+    <source-file src="src/android/armeabi/liblocSDK8b.so" target-dir="libs/armeabi"/>
+
+    <source-file src="src/android/armeabi-v7a/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/armeabi-v7a"/>
+    <source-file src="src/android/armeabi-v7a/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/armeabi-v7a"/>
+    <source-file src="src/android/armeabi-v7a/libgnustl_shared.so" target-dir="libs/armeabi-v7a"/>
+    <source-file src="src/android/armeabi-v7a/libindoor.so" target-dir="libs/armeabi-v7a"/>
+    <source-file src="src/android/armeabi-v7a/liblocSDK8b.so" target-dir="libs/armeabi-v7a"/>
+
+    <source-file src="src/android/x86/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/x86"/>
+    <source-file src="src/android/x86/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/x86"/>
+    <source-file src="src/android/x86/libgnustl_shared.so" target-dir="libs/x86"/>
+    <source-file src="src/android/x86/libindoor.so" target-dir="libs/x86"/>
+    <source-file src="src/android/x86/liblocSDK8b.so" target-dir="libs/x86"/>
+
+    <source-file src="src/android/x86_64/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/x86_64"/>
+    <source-file src="src/android/x86_64/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/x86_64"/>
+    <source-file src="src/android/x86_64/libgnustl_shared.so" target-dir="libs/x86_64"/>
+    <source-file src="src/android/x86_64/libindoor.so" target-dir="libs/x86_64"/>
+    <source-file src="src/android/x86_64/liblocSDK8b.so" target-dir="libs/x86_64"/>
+
+    <source-file src="src/android/LocationPlugin.java" target-dir="src/com/baidu/location" />
+  </platform>
+</plugin>
