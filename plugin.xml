@@ -10,6 +10,8 @@
   <repo>https://github.com/zhoucan38/cordova-plugin-baidu-geolocation.git</repo>
   <issue>https://github.com/zhoucan38/cordova-plugin-baidu-geolocation/issues</issue>
 
+  <preference name="API_KEY"/>
+
   <js-module src="www/location.js" name="LocationPlugin">
       <clobbers target="window.baiduLocation" />
   </js-module>
