@@ -41,8 +41,8 @@
       <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"/>
       <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="$API_KEY"/>
     </config-file>
-    
-    <source-file src="src/android/BaiduLBS_Android.jar" target-dir="libs"/>
+
+    <source-file src="src/android/libs/BaiduLBS_Android.jar" target-dir="libs"/>
 
     <source-file src="src/android/arm64-v8a/libBaiduMapSDK_base_v7_5_0.so" target-dir="libs/arm64-v8a"/>
     <source-file src="src/android/arm64-v8a/libBaiduMapSDK_map_v7_5_0.so" target-dir="libs/arm64-v8a"/>
