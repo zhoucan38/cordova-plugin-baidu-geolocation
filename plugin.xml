@@ -11,7 +11,7 @@
   <issue>https://github.com/zhoucan38/cordova-plugin-baidu-geolocation/issues</issue>
 
   <js-module src="www/location.js" name="LocationPlugin">
-      <clobbers target="LocationPlugin" />
+      <clobbers target="window.baiduLocation" />
   </js-module>
 
   <!-- android -->
